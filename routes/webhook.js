@@ -6,4 +6,8 @@ router.get("/", (req, res) => {
   res.send(response);
 });
 
+router.post('/', (req,res)=>{
+  res.send(req.body)
+})
+
 export default router;
