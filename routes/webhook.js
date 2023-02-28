@@ -3,7 +3,7 @@ const router = express.Router();
 
 router.get("/", (req, res) => {
   res.send(
-    req.query?.hub?.challenge ? req.query.hub.challenge : "Something went wrong"
+    req.query?.challenge ? req.query.challenge : "Something went wrong"
   );
 });
 
