@@ -47,8 +47,7 @@ const sendMessage = async (to, message) => {
     );
     return data;
   } catch (err) {
-    console.log('first error');
-    console.log(err, 'ffff');
+    return err
   }
 };
 
@@ -59,7 +58,6 @@ router.post('/', async (req, res) => {
     const responseMessage = await callDialogFlow(body, from);
     console.log(responseMessage, 'rrrrrr');
     const send = await sendMessage(from, responseMessage);
-    console.log(send, 'jgvhg');
     res.send(send);
   } catch (err) {
     console.log('Second error');
