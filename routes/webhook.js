@@ -48,6 +48,7 @@ const sendMessage = async (to, message) => {
     );
     return data;
   } catch (err) {
+    console.log("first error")
     console.log(err);
   }
 };
@@ -62,6 +63,7 @@ router.post('/', async (req, res) => {
     console.log(send);
     res.send(send);
   } catch (err) {
+    console.log('Second error')
     console.log(err);
   }
 });
