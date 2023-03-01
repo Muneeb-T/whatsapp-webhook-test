@@ -20,42 +20,50 @@ const callDialogFlow = async (queryText, sessionId) => {
 };
 
 const sendMessage = async (to, message) => {
-  const phoneNumberId = '117158507969853';
-  const version = 'v16.0';
-  const { data } = await axios.post(
-    `https://graph.facebook.com/${version}/${phoneNumberId}/messages`,
-    {
-      messaging_product: 'whatsapp',
-      to,
-      template: {
-        language: {
-          code: 'en_US',
-        },
-        components: [
-          {
-            type: 'body',
-            parameters: [
-              {
-                type: 'text',
-                text: message,
-              },
-            ],
+  try {
+    const phoneNumberId = '117158507969853';
+    const version = 'v16.0';
+    const { data } = await axios.post(
+      `https://graph.facebook.com/${version}/${phoneNumberId}/messages`,
+      {
+        messaging_product: 'whatsapp',
+        to,
+        template: {
+          language: {
+            code: 'en_US',
           },
-        ],
+          components: [
+            {
+              type: 'body',
+              parameters: [
+                {
+                  type: 'text',
+                  text: message,
+                },
+              ],
+            },
+          ],
+        },
       },
-    },
-  );
-  return data;
+    );
+    return data;
+  } catch (err) {
+    console.log(err);
+  }
 };
 
 router.post('/', async (req, res) => {
-  const { from, text } = req.body?.entry[0]?.changes[0]?.value?.messages[0];
-  const { body } = text;
-  const responseMessage = await callDialogFlow(body, from);
-  console.log(responseMessage)
-  const send = await sendMessage(from, responseMessage);
-  console.log(send)
-  res.send(send);
+  try {
+    const { from, text } = req.body?.entry[0]?.changes[0]?.value?.messages[0];
+    const { body } = text;
+    const responseMessage = await callDialogFlow(body, from);
+    console.log(responseMessage);
+    const send = await sendMessage(from, responseMessage);
+    console.log(send);
+    res.send(send);
+  } catch (err) {
+    console.log(err);
+  }
 });
 
 export default router;
