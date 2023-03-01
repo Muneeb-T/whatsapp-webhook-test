@@ -19,7 +19,7 @@ const callDialogFlow = async (queryText, sessionId) => {
     );
     return data;
   } catch (err) {
-    console.log('Third error')
+    console.log('Third error');
     console.log(err);
   }
 };
@@ -50,11 +50,17 @@ const sendMessage = async (to, message) => {
           ],
         },
       },
+      {
+        headers: {
+          Authorization:
+            'Bearer EAAT2cYCAQboBAHuJTRTHKicQGigLIZBBItbhwnKgKUKwNxSJYNT6P4rZCLQofuziuf1y7TfSNhwZCBQ7MvyFgVyxTvsBfrMAhFhqb2D5XAZCp0fZAkGfpChR75CcwYPVb9ik8p4GxkbvGMDEDmxi0LiyG2NTrRipezY5ZBh5ZCwiRPkZCHM7ZAZBC0VyM6nH3aBiEZCHD3XaCZCSTgZDZD',
+        },
+      },
     );
     return data;
   } catch (err) {
     console.log('first error');
-    console.log(err,"ffff");
+    console.log(err, 'ffff');
   }
 };
 
@@ -63,13 +69,13 @@ router.post('/', async (req, res) => {
     const { from, text } = req.body?.entry[0]?.changes[0]?.value?.messages[0];
     const { body } = text;
     const responseMessage = await callDialogFlow(body, from);
-    console.log(responseMessage,"rrrrrr");
+    console.log(responseMessage, 'rrrrrr');
     const send = await sendMessage(from, responseMessage);
-    console.log(send,"jgvhg");
+    console.log(send, 'jgvhg');
     res.send(send);
   } catch (err) {
     console.log('Second error');
-    console.log(err,"ssss");
+    console.log(err, 'ssss');
   }
 });
 
