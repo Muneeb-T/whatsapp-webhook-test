@@ -41,7 +41,7 @@ const sendMessage = async (to, message) => {
       {
         headers: {
           Authorization:
-            'Bearer EAAT2cYCAQboBACXhG6Ups0OymQ34GOPg1ZCubSicZAZCDsOn3LqOZAksEf0WSOepc1ZBZBvBD7c9WOv2l9e1aEpDu4vZCQMMngJ0xNoG4M4wHwYqLvY2VoM4ZAfjm6DxbsrZARwGTkJuwJn5q7Ncc3eyzlMM9cu7rg524nVGZCDGfDTyaVXEQJygCOQQZANZATcggdb1vwPNFdcIxAZDZD',
+            'Bearer EAAT2cYCAQboBAGwqH6JGavFmjZAGzpFYD3SKZBKregHJPmPZALunEICrQplm6SM0mBRcNg28CEOVnIHSkqFxdWUvZCQ5hOLxykeMfuuuZC1CFgHQwQBEIM64EPct1WDfJM5xhTNYIRZBxSZBNGd0cPaZBWPFRdHwpDLqNK3BLkLZA0n80LNDsNWX8GzSFhoUoRA3CUwEkMS2gcgZDZD',
         },
       },
     );
