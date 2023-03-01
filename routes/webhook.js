@@ -54,7 +54,7 @@ const sendMessage = async (to, message) => {
     return data;
   } catch (err) {
     console.log('first error');
-    console.log(err);
+    console.log(err,"ffff");
   }
 };
 
@@ -63,13 +63,13 @@ router.post('/', async (req, res) => {
     const { from, text } = req.body?.entry[0]?.changes[0]?.value?.messages[0];
     const { body } = text;
     const responseMessage = await callDialogFlow(body, from);
-    console.log(responseMessage);
+    console.log(responseMessage,"rrrrrr");
     const send = await sendMessage(from, responseMessage);
-    console.log(send);
+    console.log(send,"jgvhg");
     res.send(send);
   } catch (err) {
     console.log('Second error');
-    console.log(err);
+    console.log(err,"ssss");
   }
 });
 
