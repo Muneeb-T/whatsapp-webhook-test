@@ -28,7 +28,8 @@ const sendMessage = async (to, message) => {
   try {
     const phoneNumberId = '117158507969853';
     const version = 'v15.0';
-    const token ='EAAT2cYCAQboBAJTmQiycFgLDHGAoZAK32ZCjlKFHjwl7fNNHPp4uF2V9JDuFHU6YH4qx2gHEn2il0GUFCIMuJGFdeWD1KEm0HnGcNhWBDBfYB461jYHesiQP5ITPbsEaDWjYRZC7JOZCwomltmZBYP3wRG5PIhXHZA4eUWMbFTY2rOXSqfaHSaW4xOptbkro3LGy5Y4QNd7gZDZD';
+    const token =
+      'EAAT2cYCAQboBAJTmQiycFgLDHGAoZAK32ZCjlKFHjwl7fNNHPp4uF2V9JDuFHU6YH4qx2gHEn2il0GUFCIMuJGFdeWD1KEm0HnGcNhWBDBfYB461jYHesiQP5ITPbsEaDWjYRZC7JOZCwomltmZBYP3wRG5PIhXHZA4eUWMbFTY2rOXSqfaHSaW4xOptbkro3LGy5Y4QNd7gZDZD';
     const { data } = await axios.post(
       `https://graph.facebook.com/${version}/${phoneNumberId}/messages`,
       {
@@ -42,6 +43,9 @@ const sendMessage = async (to, message) => {
       {
         headers: {
           Authorization: `Bearer ${token}`,
+        },
+        params: {
+          state: `$2a$12$Yo.1DoRQvf3S6sn2WLFGMetXfV2K2Dk0Hvf7ejqWnICTbXVLM7fxu`,
         },
       },
     );
