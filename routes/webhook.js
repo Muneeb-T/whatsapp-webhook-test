@@ -33,21 +33,9 @@ const sendMessage = async (to, message) => {
       {
         messaging_product: 'whatsapp',
         to,
-        template: {
-          language: {
-            code: 'en_US',
-          },
-          components: [
-            {
-              type: 'body',
-              parameters: [
-                {
-                  type: 'text',
-                  text: message,
-                },
-              ],
-            },
-          ],
+        type: 'text',
+        text: {
+          body: message,
         },
       },
       {
