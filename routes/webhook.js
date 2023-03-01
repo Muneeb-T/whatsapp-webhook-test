@@ -28,7 +28,7 @@ const sendMessage = async (to, message) => {
   try {
     const phoneNumberId = '117158507969853';
     const version = 'v15.0';
-    const token = `Bearer EAAT2cYCAQboBAAiiOsLROYYT017AGK3L6vZCZADpNeOXd2eojV9lTX17DIA3SDIwIZABEdOCOV90yEQxwCias7b3y7j31E3ZC1ZCZA8LsYCrAADeZCtxgHM72FIgY2B0y2dTTrpg4r9uDoZAOeFM07HIaZA8FSkFpz63ZBtESOMG0KiWiI5Dcv5ZCBekz8LzHn26WrgIYZAlWICZCMAZDZD`;
+    const token = `Bearer EAAT2cYCAQboBANxqbgQZBm0uqEafEkwvPO69x98H5NX7j5GplevxYwsCpd1KMwnMkkz1PaA8lZCn6Eyapv1NTgeo1RA3cWo0nqJG2hkOgujAt7zkj64VAg4t6ahRFylpO9fVBZCa6fWmkh6oClvT1jHnHqzEfP7ZALE8tC3uZBGLZCWZBNRK3hUQZCHoygZCmJfYo20tk8w6MJgZDZD`;
     const { data } = await axios.post(
       `https://graph.facebook.com/${version}/${phoneNumberId}/messages`,
       {
