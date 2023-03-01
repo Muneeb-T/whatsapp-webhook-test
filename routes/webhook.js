@@ -28,33 +28,26 @@ const sendMessage = async (to, message) => {
   try {
     const phoneNumberId = '117158507969853';
     const version = 'v15.0';
-    console.log({
-      to,
-      message, 
-      version,
-      phoneNumberId,
-      message
-    })
+    const token = `Bearer EAAT2cYCAQboBAAiiOsLROYYT017AGK3L6vZCZADpNeOXd2eojV9lTX17DIA3SDIwIZABEdOCOV90yEQxwCias7b3y7j31E3ZC1ZCZA8LsYCrAADeZCtxgHM72FIgY2B0y2dTTrpg4r9uDoZAOeFM07HIaZA8FSkFpz63ZBtESOMG0KiWiI5Dcv5ZCBekz8LzHn26WrgIYZAlWICZCMAZDZD`;
     const { data } = await axios.post(
       `https://graph.facebook.com/${version}/${phoneNumberId}/messages`,
       {
         messaging_product: 'whatsapp',
-        to,
+        to: '919747497621',
         type: 'text',
         text: {
-          body: message,
+          body: 'Hope you are doing well',
         },
       },
       {
         headers: {
-          Authorization:
-            'Bearer EAAT2cYCAQboBAMBCwW6W0REZBkmiuX2e50PlUCssxMyBebnB3UGYmCScxUwyn9VyU4UjjqzrnXVrsPC5BPFojzSV2qfq6fwMxZCDxKZC8n8boqG234UVXJKMYE9uR2GvMZAoNC6Au79DbZBAsuoelNlg3NA3nrN2reZCWmhbZBfV61uJk1jjVO7jkhm94VDRbs8G4N2QnRvkgZDZD',
+          Authorization: token,
         },
       },
     );
     return data;
   } catch (err) {
-    return err
+    return err;
   }
 };
 
