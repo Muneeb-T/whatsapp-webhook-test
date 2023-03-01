@@ -16,8 +16,8 @@ router.post('/', (req, res) => {
       queryText: body,
       sessionId: from,
     })
-    .then((data) => {
-      console.log(data);
+    .then((response) => {
+      console.log(response.data);
     });
 });
 
