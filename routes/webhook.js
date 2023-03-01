@@ -55,7 +55,7 @@ router.post('/', async (req, res) => {
   const send = await sendMessage(from, responseMessage);
   res
     .status(200)
-    .json({ success: true, data: send, message: 'Message sent successfully' });
+    .json({ success: true, message: 'Message sent successfully' });
 });
 
 export default router;
