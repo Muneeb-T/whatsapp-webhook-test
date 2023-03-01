@@ -29,13 +29,18 @@ const sendMessage = async (to, message) => {
     const phoneNumberId = '117158507969853';
     const version = 'v15.0';
     const { data } = await axios.post(
-      `https://graph.facebook.com/v15.0/117158507969853/messages`,
+      `https://graph.facebook.com/${version}/${phoneNumberId}/messages`,
       {
         messaging_product: 'whatsapp',
         to,
         type: 'text',
         text: {
-          body: message,
+          parameters: [
+            {
+              type: 'text',
+              text: message,
+            },
+          ],
         },
       },
       {
