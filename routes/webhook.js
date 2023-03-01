@@ -8,15 +8,20 @@ router.get('/', (req, res) => {
 });
 
 const callDialogFlow = async (queryText, sessionId) => {
-  const { data } = await axios.post(
-    'https://tan-powerful-hummingbird.cyclic.app/dialogflow',
-    {
-      languageCode: 'en',
-      queryText,
-      sessionId,
-    },
-  );
-  return data;
+  try {
+    const { data } = await axios.post(
+      'https://tan-powerful-hummingbird.cyclic.app/dialogflow',
+      {
+        languageCode: 'en',
+        queryText,
+        sessionId,
+      },
+    );
+    return data;
+  } catch (err) {
+    console.log('Third error')
+    console.log(err);
+  }
 };
 
 const sendMessage = async (to, message) => {
@@ -48,7 +53,7 @@ const sendMessage = async (to, message) => {
     );
     return data;
   } catch (err) {
-    console.log("first error")
+    console.log('first error');
     console.log(err.data);
   }
 };
@@ -63,7 +68,7 @@ router.post('/', async (req, res) => {
     console.log(send);
     res.send(send);
   } catch (err) {
-    console.log('Second error')
+    console.log('Second error');
     console.log(err.data);
   }
 });
