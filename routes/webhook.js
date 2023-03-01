@@ -8,7 +8,7 @@ router.get('/', (req, res) => {
 });
 
 router.post('/', (req, res) => {
-  console.log(req.body)
+  console.log(req.body.entry[0])
   const { from, text } = req.body?.entry[0]?.changes[0]?.messages[0];
   const { body } = text;
   console.log(from, text, body)
