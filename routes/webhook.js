@@ -21,7 +21,6 @@ const callDialogFlow = async (queryText, sessionId) => {
   } catch (err) {
     console.log('Third error');
     console.log(err);
-    res.send(err);
   }
 };
 
@@ -50,7 +49,6 @@ const sendMessage = async (to, message) => {
   } catch (err) {
     console.log('first error');
     console.log(err, 'ffff');
-    res.send(err);
   }
 };
 
