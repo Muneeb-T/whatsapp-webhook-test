@@ -35,18 +35,13 @@ const sendMessage = async (to, message) => {
         to,
         type: 'text',
         text: {
-          parameters: [
-            {
-              type: 'text',
-              text: message,
-            },
-          ],
+          body: message,
         },
       },
       {
         headers: {
           Authorization:
-            'Bearer EAAT2cYCAQboBAHZBghKu7aqAhAXsFi5YYsXs2MpCy2gAvHdZCQlTrakDnyTZCQSfDE3QFnApm4H6itHGjyaPGZAAdUkzs2RgAbCSLp85OjZBZAOwGSPMUieV1nPfKe58jjphT2q5MwPsdFsijQoSITGpabu6thxdp0v2XBvi5fYbvjc9W2I4XwFHQr8LtN9QqY92TeihEotgZDZD',
+            'Bearer EAAT2cYCAQboBAHGzhWPu0ZAaC9szUV06APAEJGgydq004QPK4YfIJ3adGNA1lZARselfqi7iWxBZBv0gOlOZBn48chGx2uQlkNglhVhPZAZBUKXl8MBG4PpxI4f65kslwZAsQ2P78nMbV8OFHlp4ouIDnDHDtRl3HdwUSI6Tu0rVR4UdcHXBZAreniG4QUPw1vtDQqVDcQZB3RAZDZD',
         },
       },
     );
