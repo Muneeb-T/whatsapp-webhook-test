@@ -21,7 +21,7 @@ const callDialogFlow = async (queryText, sessionId) => {
   } catch (err) {
     console.log('Third error');
     console.log(err);
-    res.send(err)
+    res.send(err);
   }
 };
 
@@ -30,7 +30,7 @@ const sendMessage = async (to, message) => {
     const phoneNumberId = '117158507969853';
     const version = 'v15.0';
     const { data } = await axios.post(
-      `https://graph.facebook.com/${version}/${phoneNumberId}/messages`,
+      `https://graph.facebook.com/v15.0/117158507969853/messages`,
       {
         messaging_product: 'whatsapp',
         to,
@@ -42,7 +42,7 @@ const sendMessage = async (to, message) => {
       {
         headers: {
           Authorization:
-            'Bearer EAAT2cYCAQboBAHuJTRTHKicQGigLIZBBItbhwnKgKUKwNxSJYNT6P4rZCLQofuziuf1y7TfSNhwZCBQ7MvyFgVyxTvsBfrMAhFhqb2D5XAZCp0fZAkGfpChR75CcwYPVb9ik8p4GxkbvGMDEDmxi0LiyG2NTrRipezY5ZBh5ZCwiRPkZCHM7ZAZBC0VyM6nH3aBiEZCHD3XaCZCSTgZDZD',
+            'Bearer EAAT2cYCAQboBAHZBghKu7aqAhAXsFi5YYsXs2MpCy2gAvHdZCQlTrakDnyTZCQSfDE3QFnApm4H6itHGjyaPGZAAdUkzs2RgAbCSLp85OjZBZAOwGSPMUieV1nPfKe58jjphT2q5MwPsdFsijQoSITGpabu6thxdp0v2XBvi5fYbvjc9W2I4XwFHQr8LtN9QqY92TeihEotgZDZD',
         },
       },
     );
@@ -50,7 +50,7 @@ const sendMessage = async (to, message) => {
   } catch (err) {
     console.log('first error');
     console.log(err, 'ffff');
-    res.send(err)
+    res.send(err);
   }
 };
 
@@ -66,7 +66,7 @@ router.post('/', async (req, res) => {
   } catch (err) {
     console.log('Second error');
     console.log(err, 'ssss');
-    res.send(err)
+    res.send(err);
   }
 });
 
