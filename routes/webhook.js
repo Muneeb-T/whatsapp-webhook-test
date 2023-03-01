@@ -28,6 +28,13 @@ const sendMessage = async (to, message) => {
   try {
     const phoneNumberId = '117158507969853';
     const version = 'v15.0';
+    console.log({
+      to,
+      message, 
+      version,
+      phoneNumberId,
+      message
+    })
     const { data } = await axios.post(
       `https://graph.facebook.com/${version}/${phoneNumberId}/messages`,
       {
