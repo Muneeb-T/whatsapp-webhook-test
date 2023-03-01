@@ -52,10 +52,10 @@ router.post('/', async (req, res) => {
   const { from, text } = req.body?.entry[0]?.changes[0]?.value?.messages[0];
   const { body } = text;
   const responseMessage = await callDialogFlow(body, from);
+  console.log(responseMessage)
   const send = await sendMessage(from, responseMessage);
-  res
-    .status(200)
-    .json({ success: true, message: 'Message sent successfully' });
+  console.log(send)
+  res.send(send);
 });
 
 export default router;
