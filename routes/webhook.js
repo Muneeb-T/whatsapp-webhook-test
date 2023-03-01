@@ -8,10 +8,8 @@ router.get('/', (req, res) => {
 });
 
 router.post('/', (req, res) => {
-  console.log(req.body.entry[0])
-  const { from, text } = req.body?.entry[0]?.changes[0]?.messages[0];
+  const { from, text } = req.body?.entry[0]?.changes[0]?.value?.messages[0];
   const { body } = text;
-  console.log(from, text, body)
   axios
     .post('https://tan-powerful-hummingbird.cyclic.app/dialogflow', {
       languageCode: 'en',
@@ -19,7 +17,7 @@ router.post('/', (req, res) => {
       sessionId: from,
     })
     .then((data) => {
-      console.log(data)
+      console.log(data);
     });
 });
 
